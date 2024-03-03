@@ -21,7 +21,7 @@ struct ContentView: View {
 }
 
 struct CardView: View {
-    var isFaceUp: Bool = false
+    @State var isFaceUp: Bool = false
     
     var body: some View {
         ZStack {
@@ -33,8 +33,11 @@ struct CardView: View {
                 RoundedRectangle(cornerRadius: 12)
             }
 
+        }.onTapGesture {
+            isFaceUp.toggle()
         }
     }
+    
 }
 
 #Preview {
